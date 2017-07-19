@@ -1,0 +1,17 @@
+{
+  "name": "astiserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mssql": "^4.0.4",
+    "mysql": "^2.13.0",
+    "node-firebird": "^0.8.2",
+    "pg": "^7.0.0"
+  }
+}
