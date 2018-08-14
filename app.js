@@ -19,7 +19,6 @@ function accept(req, res) {
 
     req.on('end', function () {
         command = JSON.parse(data.toString());
-
         if (command.database == "MySQL") MySQLAdapter.process(command, onProcess);
         if (command.database == "Firebird") FirebirdAdapter.process(command, onProcess);
         if (command.database == "MS SQL") MSSQLAdapter.process(command, onProcess);
