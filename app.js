@@ -36,5 +36,5 @@ var onProcess = function (result){
 // http.createServer(accept).listen(cfg.stiPort);
 // console.log("Servidor STI en puerto: ", cfg.stiPort);
 
-http.createServer(accept).listen(process.env.STI_PORT);
-console.log("Servidor STI en puerto: ", process.env.STI_PORT);
+http.createServer(accept).listen(process.env.STI_PORT || 5001);
+console.log("Servidor STI en puerto: ", process.env.STI_PORT || 5001);
