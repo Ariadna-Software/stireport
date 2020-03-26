@@ -5,7 +5,9 @@ var MSSQLAdapter = require('./MSSQLAdapter');
 var PostgreSQLAdapter = require('./PostgreSQLAdapter');
 var OracleAdapter = require('./OracleAdapter');
 var cfg = require("./config.json");
+var dotEnv = require("dotenv");
 
+dotEnv.config();
 var connectionStringBuilder;
 var response;
 function accept(req, res) {
@@ -31,5 +33,8 @@ var onProcess = function (result){
     response.end(JSON.stringify(result));
 }
 
-http.createServer(accept).listen(cfg.stiPort);
-console.log("Servidor STI en puerto: ", cfg.stiPort);
+// http.createServer(accept).listen(cfg.stiPort);
+// console.log("Servidor STI en puerto: ", cfg.stiPort);
+
+http.createServer(accept).listen(process.env.STI_PORT);
+console.log("Servidor STI en puerto: ", process.env.STI_PORT);
